@@ -32,3 +32,5 @@ Thumbs.db
 
 # Compiled C extensions
 *.so
+
+actions-runner/

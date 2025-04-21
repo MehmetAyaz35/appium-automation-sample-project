@@ -298,6 +298,7 @@ def test_date_picker_dialog(driver):
         (AppiumBy.XPATH, '//android.view.View[@text="10"]')))
     day.click()
 
+
     # Confirm with OK
     ok_button = driver.find_element(AppiumBy.ID, "android:id/button1")
     ok_button.click()
