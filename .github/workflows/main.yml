@@ -28,6 +28,7 @@ jobs:
       run: |
         pytest tests/test_appium.py
         # pytest --html=reports/report.html --self-contained-html
+        
 
         
     # - name: Upload HTML Report
