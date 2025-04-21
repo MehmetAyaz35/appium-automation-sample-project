@@ -1,0 +1,34 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Sanal ortam
+venv/
+env/
+ENV/
+.venv/
+
+# VSCode ve IDE dosyaları
+.vscode/
+.idea/
+
+# Pytest cache
+.pytest_cache/
+
+# HTML reports
+reports/
+*.html
+
+# Screenshots on failure
+screenshots/
+
+# Log files
+*.log
+
+# MacOS & Windows artefacts
+.DS_Store
+Thumbs.db
+
+# Compiled C extensions
+*.so
