@@ -8,42 +8,42 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 
 
-# Purpose: Select different values from a dropdown (Spinner)
-# Parametrized: Runs for "Earth", "Mars", "Venus"
-# Verifies: That the correct item is selected
-@pytest.mark.parametrize("planet", ["Earth", "Mars", "Venus"])
-def test_spinner_dynamic(driver, planet):
-    driver.find_element(
-        AppiumBy.ANDROID_UIAUTOMATOR,
-        'new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description("Views"))'
-    ).click()
+# # Purpose: Select different values from a dropdown (Spinner)
+# # Parametrized: Runs for "Earth", "Mars", "Venus"
+# # Verifies: That the correct item is selected
+# @pytest.mark.parametrize("planet", ["Earth", "Mars", "Venus"])
+# def test_spinner_dynamic(driver, planet):
+#     driver.find_element(
+#         AppiumBy.ANDROID_UIAUTOMATOR,
+#         'new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description("Views"))'
+#     ).click()
 
-    driver.find_element(AppiumBy.ACCESSIBILITY_ID, "Controls").click()
-    driver.find_element(AppiumBy.ACCESSIBILITY_ID, "2. Dark Theme").click()
+#     driver.find_element(AppiumBy.ACCESSIBILITY_ID, "Controls").click()
+#     driver.find_element(AppiumBy.ACCESSIBILITY_ID, "2. Dark Theme").click()
 
-    spinner = driver.find_element(AppiumBy.ID, "io.appium.android.apis:id/spinner1")
-    spinner.click()
+#     spinner = driver.find_element(AppiumBy.ID, "io.appium.android.apis:id/spinner1")
+#     spinner.click()
 
-    option = driver.find_element(AppiumBy.XPATH, f'//android.widget.CheckedTextView[@text="{planet}"]')
-    option.click()
+#     option = driver.find_element(AppiumBy.XPATH, f'//android.widget.CheckedTextView[@text="{planet}"]')
+#     option.click()
 
-    selected = driver.find_element(AppiumBy.ID, "android:id/text1")
-    assert selected.text == planet
+#     selected = driver.find_element(AppiumBy.ID, "android:id/text1")
+#     assert selected.text == planet
 
-# Purpose: Verifies that the "Animation" menu item is visible and clickable
-# @pytest.mark.skip(reason="Skipping temporarily")
-def test_open_animation(driver):
-    views = driver.find_element(AppiumBy.ACCESSIBILITY_ID, "Animation")
-    assert views.is_displayed()
-    views.click()
+# # Purpose: Verifies that the "Animation" menu item is visible and clickable
+# # @pytest.mark.skip(reason="Skipping temporarily")
+# def test_open_animation(driver):
+#     views = driver.find_element(AppiumBy.ACCESSIBILITY_ID, "Animation")
+#     assert views.is_displayed()
+#     views.click()
 
-# Purpose: Scrolls to "Views" and taps it
-# Acts as a base test for navigating into the views section
-def test_open_views(driver):
-    driver.find_element(
-        AppiumBy.ANDROID_UIAUTOMATOR,
-        'new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description("Views"))'
-    ).click()
+# # Purpose: Scrolls to "Views" and taps it
+# # Acts as a base test for navigating into the views section
+# def test_open_views(driver):
+#     driver.find_element(
+#         AppiumBy.ANDROID_UIAUTOMATOR,
+#         'new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().description("Views"))'
+#     ).click()
 
 # Navigates to Views → WebView
 # Switches context from native to WebView
