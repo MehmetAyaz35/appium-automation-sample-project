@@ -29,6 +29,7 @@ def test_spinner_dynamic(driver, planet):
 
     selected = driver.find_element(AppiumBy.ID, "android:id/text1")
     assert selected.text == planet
+    
 
 # Purpose: Verifies that the "Animation" menu item is visible and clickable
 # @pytest.mark.skip(reason="Skipping temporarily")
