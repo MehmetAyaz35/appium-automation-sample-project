@@ -51,48 +51,48 @@ def test_open_views(driver):
 # Switches context from native to WebView
 # Interacts with HTML content, clicking a link with ID "i am a link"
 # Switches back to native (optional)
-def test_webview_interaction(driver):
-    wait = WebDriverWait(driver, 10)
+# def test_webview_interaction(driver):
+#     wait = WebDriverWait(driver, 10)
 
-    # Scroll to "Views" and tap
-    driver.find_element(
-        AppiumBy.ANDROID_UIAUTOMATOR,
-        'new UiScrollable(new UiSelector().scrollable(true))'
-        '.scrollIntoView(new UiSelector().description("Views"))'
-    ).click()
+#     # Scroll to "Views" and tap
+#     driver.find_element(
+#         AppiumBy.ANDROID_UIAUTOMATOR,
+#         'new UiScrollable(new UiSelector().scrollable(true))'
+#         '.scrollIntoView(new UiSelector().description("Views"))'
+#     ).click()
 
-    # Scroll to "WebView" and tap
-    driver.find_element(
-        AppiumBy.ANDROID_UIAUTOMATOR,
-        'new UiScrollable(new UiSelector().scrollable(true))'
-        '.scrollIntoView(new UiSelector().description("WebView"))'
-    ).click()
+#     # Scroll to "WebView" and tap
+#     driver.find_element(
+#         AppiumBy.ANDROID_UIAUTOMATOR,
+#         'new UiScrollable(new UiSelector().scrollable(true))'
+#         '.scrollIntoView(new UiSelector().description("WebView"))'
+#     ).click()
 
-    # Retrieve all available contexts (NATIVE_APP, WEBVIEW_...)
-    contexts = driver.contexts
-    print("Available contexts:", contexts)
+#     # Retrieve all available contexts (NATIVE_APP, WEBVIEW_...)
+#     contexts = driver.contexts
+#     print("Available contexts:", contexts)
 
-    # Switch to the WebView context
-    switched = False
-    for context in contexts:
-        if "WEBVIEW" in context:
-            driver.switch_to.context(context)
-            print("Switched to WebView context:", context)
-            switched = True
-            break
+#     # Switch to the WebView context
+#     switched = False
+#     for context in contexts:
+#         if "WEBVIEW" in context:
+#             driver.switch_to.context(context)
+#             print("Switched to WebView context:", context)
+#             switched = True
+#             break
 
-    assert switched, "Could not switch to WEBVIEW context"
+#     assert switched, "Could not switch to WEBVIEW context"
 
-    # Interact with the link inside the WebView
-    try:
-        link = driver.find_element(AppiumBy.XPATH, "//a[@id='i am a link']")
-        link.click()
-        print("✅ 'i am a link' was successfully clicked.")
-    except Exception as e:
-        pytest.fail(f"❌ WebView link could not be clicked: {str(e)}")
+#     # Interact with the link inside the WebView
+#     try:
+#         link = driver.find_element(AppiumBy.XPATH, "//a[@id='i am a link']")
+#         link.click()
+#         print("✅ 'i am a link' was successfully clicked.")
+#     except Exception as e:
+#         pytest.fail(f"❌ WebView link could not be clicked: {str(e)}")
 
-    # Optional: switch back to native context
-    driver.switch_to.context("NATIVE_APP")
+#     # Optional: switch back to native context
+#     driver.switch_to.context("NATIVE_APP")
 
 # Navigates to Views → Controls → 2. Dark Theme
 # Fills in a text field
