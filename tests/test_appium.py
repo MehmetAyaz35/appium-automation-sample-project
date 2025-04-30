@@ -183,6 +183,7 @@ def test_drag_and_drop(driver):
 
     wait.until(EC.presence_of_element_located((AppiumBy.ACCESSIBILITY_ID, "Drag and Drop"))).click()
 
+
     # Source and destination elements
     src = wait.until(EC.presence_of_element_located((AppiumBy.ID, "io.appium.android.apis:id/drag_dot_1")))
     dst = wait.until(EC.presence_of_element_located((AppiumBy.ID, "io.appium.android.apis:id/drag_dot_2")))
