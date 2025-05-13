@@ -215,6 +215,7 @@ def test_drag_and_drop(driver):
 # Verifies that the state has changed
 def test_switch_toggle(driver):
     wait = WebDriverWait(driver, 10)
+    
 
     driver.find_element(
         AppiumBy.ANDROID_UIAUTOMATOR,
